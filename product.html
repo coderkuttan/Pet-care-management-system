@@ -1,0 +1,192 @@
+<html>
+<head>
+    <title>Pawfect</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff1c2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #a64942;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        header .logo-space {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        header .logo-space img {
+            height: 60px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #fd5f55;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        main h2 {
+            color: #a64942;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .product-card h3 {
+            color: #fd5f55;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #a64942;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+        footer .social-icons {
+            margin-top: 10px;
+        }
+        footer img {
+            width: 25px;
+            height: 25px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        footer img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="pet.html">Home</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="logo-space">
+            <img src="H:/Semester 2/fsd/main logo.png" alt="Pawfect Logo">
+        </div>
+        <nav>
+            <a href="vet.html">Veterinary</a>
+            <a href="pawmedia.html">PawMedia</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Our Products</h2>
+        <div class="product-grid" onmouseover="onmouse()">
+            <div class="product-card">
+                <a href="https://www.amazon.in/Himalaya-Healthy-Food-Adult-Kibble/dp/B0CZ74S61F?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A2AL6IVND0I91F" target="_blank">
+                    <img src="H:\Semester 2\1-removebg-preview.png" alt="Product 1">
+                </a>
+                <h3>Himalayan Dog food</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://www.amazon.in/DynamicSales-India-Creamy-Treats-Chicken/dp/B09Z97PFJK/ref=sr_1_6?nsdOptOutParam=true&s=pet-supplies&sr=1-6" target="_blank">
+                    <img src="H:\Semester 2\2-removebg-preview.png" alt="Product 2">
+                </a>
+                <h3>Me-O-Creamy Treats</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://www.amazon.in/Meow-Mix-Toppers-Seafood-12-Count/dp/B007TFO3KM/ref=sr_1_3?crid=1J4IUWAG51JJ9&dib=eyJ2IjoiMSJ9._609wbtXIOZuj5wAeIma9Z2-WfwI0an84e3lyKWA-_WD8RlplRfC5VjmpU82960FVLwqpVm3V1rqHjq-i_hPxFeGqSchNxWu61u-elvO3fEAwwptB3l45z7sYaDrE6gBsV32_XJ1fS18qT32vbi4ylW-JJQNcUk4yCZ635qE6KYWrc_Y87eoZsCciggp-JNi_EZh9fGkZTi01kZNjar1I29tyL2xkIqeQEWzmwP39FTuU2o8mI3UHBRrqBEsXmeWolhPwjQEVRYkO4w8Xt8tvWvu_-5fTfLUfTUSlC4S8WE.lC61JBDEQ8h1GBH4rm_GN64JO7bEjrozJd81A-sMM98&dib_tag=se&keywords=meow+mix&nsdOptOutParam=true&qid=1732724540&s=pet-supplies&sprefix=meow+mix%2Cpets%2C219&sr=1-3" target="_blank">
+                    <img src="H:\Semester 2\3-removebg-preview.png" alt="Product 3">
+                </a>
+                <h3>Meow Mix</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://www.amazon.in/Milk-Bone-Flavor-Snacks-Dog-Biscuits/dp/B000I82DU4" target="_blank">
+                    <img src="H:\Semester 2\4-removebg-preview.png" alt="Product 4">
+                </a>
+                <h3>Milk Bone-Dog treats</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://www.amazon.in/KAYTEE-PRODUCTS-Kaytee-Millet-Sprays/dp/B000VOE3QW/ref=sr_1_9?crid=1YAOS0GJIIYG5&dib=eyJ2IjoiMSJ9.IO8vp2R3kTZB6GVUHYQsMJc3zp0pcP-UpL-D5undyYnQReKtJu2IwckMj48TH4P80I7w6N1g31PRjphJmHtHiwrmxlOBYHrwt8tKXd-JlBjIAMruPTG5q90DqsrACFiKiVFEAUjM0Z_SUO1ZTIySexAPQbLewdozNlG4MWC2AkWpHxA6rafei-LffqVKuNjL9ubAWxRCQi0KDjlvg62FHXPkPIFniM7Rftoh5AcRyZMGn2IsDpMw1TuvANp6f4V76VzUEgFAOXS0029ZGApntrI9yKnJFwYmXfStjtXDelg.bhheCEhR3Unxi2j7beIefyxKLdIjKnDirRBZ1iLS0E8&dib_tag=se&keywords=kaytee&nsdOptOutParam=true&qid=1732724633&s=pet-supplies&sprefix=kayte%2Cpets%2C215&sr=1-9" target="_blank">
+                    <img src="H:\Semester 2\5-removebg-preview.png" alt="Product 5">
+                </a>
+                <h3>Kaytee</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://www.mannapro.com/cattle-swine-other/supplements/farmhouse-favorites-cattle-treats" target="_blank">
+                    <img src="H:\Semester 2\6.png" alt="Product 6">
+                </a>
+                <h3>Cattle Treat</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://www.ubuy.co.in/product/7YEER27S-manna-pro-goat-treats" target="_blank">
+                    <img src="H:\Semester 2\7-removebg-preview.png" alt="Product 7">
+                </a>
+                <h3>Manna Pro-Goat Treat</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://happyhentreats.com/" target="_blank">
+                    <img src="H:\Semester 2\8-removebg-preview.png" alt="Product 8">
+                </a>
+                <h3>Happy Hen</h3>
+            </div>
+            <div class="product-card">
+                <a href="https://www.amazon.in/Doggy-Joy-Lamb-Medallions-Treats/dp/B0BR5955Q5" target="_blank">
+                    <img src="H:\Semester 2\9-removebg-preview.png" alt="Product 9">
+                </a>
+                <h3>Dog Joy</h3>
+            </div>
+        </div>
+    </main>
+    <script>
+        function onmouse(){
+            alert("baaam");
+        }
+    </script>
+    <footer>
+        <p>Contact Us: info@pawfect.com | +91 9201213131</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="blank">
+                <img src="H:\Semester 2\Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://x.com" target="blank">
+                <img src="H:\Semester 2\1725374683twitter-x-logo.png" alt="Twitter">
+            </a>
+            <a href="https://facebook.com" target="blank">
+                <img src="H:\Semester 2\Facebook_Logo_2023.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
