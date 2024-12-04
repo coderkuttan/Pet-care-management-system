@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Pawfect</title>
@@ -24,7 +25,7 @@
             justify-content: center;
         }
         header .logo-space img {
-            height: 100px; 
+            height: 100px;
             width: auto;
         }
         nav {
@@ -61,12 +62,25 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .made-in-india {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #a64942;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #map {
+            height: 400px;
+            margin-top: 20px;
+            border: 2px solid #a64942;
+            border-radius: 10px;
+        }
         footer {
             background-color: #a64942;
             color: white;
             padding: 20px;
             text-align: center;
-            margin-top: auto;
+            margin-top: auto; 
         }
         footer .social-icons {
             margin-top: 10px;
@@ -81,12 +95,15 @@
             transform: scale(1.1);
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <a href="pet.html">Home</a>
             <a href="product.html">Products</a>
+            <a href="furry.html">Furry Rent</a>
         </nav>
         <div class="logo-space">
             <img src="H:/Semester 2/fsd/main logo.png" alt="Pawfect Logo">
@@ -94,6 +111,7 @@
         <nav>
             <a href="vet.html">Veterinary</a>
             <a href="pawmedia.html">PawMedia</a>
+            <a href="about.html">About Us</a>
         </nav>
     </header>
     <main>
@@ -114,31 +132,58 @@
             Since our inception in 2024, Pawfect has grown from a small startup to a trusted global brand. Our journey began with a group of passionate pet lovers who wanted to address the lack of reliable pet care solutions. Over the years, we’ve served countless customers and expanded our offerings to include fitness tips, veterinary support, and engaging media content for pet enthusiasts.
         </p>
 
-        <h3>Made in India</h3>
-        <p>
-            Proudly manufactured in India, our products are designed with love and care. We collaborate with local artisans and suppliers to ensure the highest quality standards. Our manufacturing units are equipped with state-of-the-art technology to produce sustainable and durable pet care items.
-        </p>
-
         <div class="story-section">
             <h3>Our Story</h3>
             <p>
-                It all started with a stray dog named "Buddy." Our founders adopted him, and their lives were forever changed. Inspired by Buddy’s unconditional love, they decided to create a platform that would bring happiness to pets and their owners alike. Today, Pawfect is more than just a brand—it’s a family that cares for every paw out there.
+                Pawfect was born out of love and compassion for pets. Our founder, a passionate pet owner, experienced firsthand the challenges of finding quality pet care products. Determined to make a difference, the journey began with a single mission: to create a world where pets are treated with the care and respect they deserve. Today, Pawfect stands as a beacon of trust for millions of pet owners.
             </p>
+        </div>
+
+        <h2>Our Stores</h2>
+        <div id="map"></div>
+
+        <div class="made-in-india">
+            <p>🇮🇳 Proudly Made in India 🇮🇳</p>
         </div>
     </main>
     <footer>
         <p>Contact Us: info@pawfect.com | +91 9201213131</p>
+        <a href="about.html">About Us</a>
         <div class="social-icons">
             <a href="https://instagram.com" target="blank">
-                <img src="H:/Semester 2/Instagram_icon.png" alt="Instagram">
+                <img src="H:\Semester 2\Instagram_icon.png" alt="Instagram">
             </a>
             <a href="https://x.com" target="blank">
-                <img src="H:/Semester 2/1725374683twitter-x-logo.png" alt="Twitter">
+                <img src="H:\Semester 2\1725374683twitter-x-logo.png" alt="Twitter">
             </a>
             <a href="https://facebook.com" target="blank">
-                <img src="H:/Semester 2/Facebook_Logo_2023.png" alt="Facebook">
+                <img src="H:\Semester 2\Facebook_Logo_2023.png" alt="Facebook">
             </a>
         </div>
     </footer>
+    <script>
+        var map = L.map('map').setView([12.9352, 77.6148], 13); 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        var locations = [
+            { coords: [12.9352, 77.6148], name: "SG Palaya" },
+            { coords: [12.9166, 77.6101], name: "BTM Layout" },
+            { coords: [12.8911, 77.6154], name: "Bommanahalli" }
+        ];
+        locations.forEach(location => {
+            L.marker(location.coords).addTo(map).bindPopup(location.name);
+        });
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var userLat = position.coords.latitude;
+                var userLon = position.coords.longitude;
+                map.setView([userLat, userLon], 13);
+                L.marker([userLat, userLon]).addTo(map).bindPopup("You are here").openPopup();
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    </script>
 </body>
 </html>
