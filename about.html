@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Pawfect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -94,6 +95,39 @@
         footer img:hover {
             transform: scale(1.1);
         }
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center; 
+            align-items: center;   
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(25% - 15px);
+            box-sizing: border-box;
+            max-width: calc(25% - 15px);
+            display: flex;
+            justify-content: center;   
+            height: 200px;  
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .made-in-india {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #a64942;
+            margin-top: 20px;
+            font-weight: bold;
+        }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -141,7 +175,25 @@
 
         <h2>Our Stores</h2>
         <div id="map"></div>
-
+        <h2>Photo Gallery</h2>
+        <div class="photo-gallery">
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\The-Importance-of-Playtime-for-Dogs-and-Cats.jpg.webp" alt="Image 1"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\synlawn-artificial-grass-at-dogmatico-dog-park-costa-rica-01.webp" alt="Image 2"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\Hounds-Lounge-owner-Mandy-blowing-bubbles-with-dogs-in-play-yard.jpg" alt="Image 3"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\labradors-playing-822381888-5c43bb98c9e77c0001ad95a3.jpg" alt="Image 4"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\cats-playing-or-fighting.jpg" alt="Image 5"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\Cat-playing-or-fighting-in-Silver-Springs-MD.jpg" alt="Image 6"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\Parrot-in-cage-playing-with-toys.webp" alt="Image 7"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\three-rabbits-eating.jpg" alt="Image 8"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\maxresdefault.jpg"alt="Image 9"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\Cows-Play-2.jpg" alt="Image 10"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\2108836882_15a6169800_b.jpg" alt="Image 11"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\images.jpeg" alt="Image 12"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\63f90ae786669d001824817c.webp" alt="Image 13"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\hamster-bully-play.avif" alt="Image 14"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\images (1).jpeg" alt="Image 15"></div>
+            <div class="gallery-item"><img src="H:\Semester 2\fsd\shutterstock_389013826.jpg" alt="Image 16"></div>
+        </div>
         <div class="made-in-india">
             <p>🇮🇳 Proudly Made in India 🇮🇳</p>
         </div>
