@@ -1,6 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawfect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -50,6 +54,27 @@
             text-align: center;
             margin-bottom: 20px;
         }
+        .hero {
+            background-image: url("H:/Semester 2/fsd/Hounds-Lounge-owner-Mandy-blowing-bubbles-with-dogs-in-play-yard.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 300px;
+            color: black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
         .vet-row {
             display: flex;
             flex-direction: column;
@@ -85,7 +110,7 @@
             color: white;
             padding: 20px;
             text-align: center;
-            margin-top: auto; 
+            margin-top: auto;
         }
         footer .social-icons {
             margin-top: 10px;
@@ -98,6 +123,17 @@
         }
         footer img:hover {
             transform: scale(1.1);
+        }
+        .btn-contact {
+            background-color: #a64942;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn-contact:hover {
+            background-color: #fd5f55;
         }
     </style>
 </head>
@@ -117,29 +153,27 @@
             <a href="furry.html">Furry Rent</a>
         </nav>
     </header>
+    <div class="hero">
+        <h1>Welcome to PawFit</h1>
+        <p>A path towards PurFect</p>
+    </div>
     <main>
         <h2>Meet Our Expert Veterinarians</h2>
         <div class="vet-row">
             <div class="vet-card">
-                <img src="H:\Semester 2\fsd\pngtree-indian-doctor-woman-smiling-at-camera-png-image_12531120.png" alt="Dr. Anjali Sharma">
+                <img src="H:/Semester 2/fsd/pngtree-indian-doctor-woman-smiling-at-camera-png-image_12531120.png" alt="Dr. Anjali Sharma">
                 <h3>Dr. Anjali Sharma</h3>
-                <p><strong>Email:</strong> anjali.sharma@pawfect.com</p>
-                <p><strong>Phone:</strong> +91 98765 43210</p>
-                <p><strong>Address:</strong> 12, Pet Wellness Road, Saket, New Delhi, India</p>
+                <button class="btn-contact" data-bs-toggle="modal" data-bs-target="#vetModal1">Contact</button>
             </div>
             <div class="vet-card">
-                <img src="H:\Semester 2\fsd\360_F_707893394_5DEhlBjWOmse1nyu0rC9T7ZRvsAFDkYC.jpg" alt="Dr. Arjun Mehta">
+                <img src="H:/Semester 2/fsd/360_F_707893394_5DEhlBjWOmse1nyu0rC9T7ZRvsAFDkYC.jpg" alt="Dr. Arjun Mehta">
                 <h3>Dr. Arjun Mehta</h3>
-                <p><strong>Email:</strong> arjun.mehta@pawfect.com</p>
-                <p><strong>Phone:</strong> +91 91234 56789</p>
-                <p><strong>Address:</strong> 45, Exotic Animal Street, Jayanagar, Bengaluru, India</p>
+                <button class="btn-contact" data-bs-toggle="modal" data-bs-target="#vetModal2">Contact</button>
             </div>
             <div class="vet-card">
-                <img src="H:\Semester 2\fsd\360_F_114892812_Va0KWhvmSUOoYNEoHCAOJ8uYXzBiD8vY.jpg" alt="Dr. Priya Nair">
+                <img src="H:/Semester 2/fsd/360_F_114892812_Va0KWhvmSUOoYNEoHCAOJ8uYXzBiD8vY.jpg" alt="Dr. Priya Nair">
                 <h3>Dr. Priya Nair</h3>
-                <p><strong>Email:</strong> priya.nair@pawfect.com</p>
-                <p><strong>Phone:</strong> +91 98234 56789</p>
-                <p><strong>Address:</strong> 78, Healthy Pets Avenue, Marine Drive, Mumbai, India</p>
+                <button class="btn-contact" data-bs-toggle="modal" data-bs-target="#vetModal3">Contact</button>
             </div>
         </div>
     </main>
@@ -148,15 +182,69 @@
         <a href="about.html">About Us</a>
         <div class="social-icons">
             <a href="https://instagram.com" target="blank">
-                <img src="H:\Semester 2\Instagram_icon.png" alt="Instagram">
+                <img src="H:/Semester 2/Instagram_icon.png" alt="Instagram">
             </a>
             <a href="https://x.com" target="blank">
-                <img src="H:\Semester 2\1725374683twitter-x-logo.png" alt="Twitter">
+                <img src="H:/Semester 2/1725374683twitter-x-logo.png" alt="Twitter">
             </a>
             <a href="https://facebook.com" target="blank">
-                <img src="H:\Semester 2\Facebook_Logo_2023.png" alt="Facebook">
+                <img src="H:/Semester 2/Facebook_Logo_2023.png" alt="Facebook">
             </a>
         </div>
     </footer>
+    <div class="modal fade" id="vetModal1" tabindex="-1" aria-labelledby="vetModal1Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="vetModal1Label">Contact Dr. Anjali Sharma</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Email: anjali.sharma@pawfect.com<br>
+            Phone: +91 9876543210
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="vetModal2" tabindex="-1" aria-labelledby="vetModal2Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="vetModal2Label">Contact Dr. Arjun Mehta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Email: arjun.mehta@pawfect.com<br>
+            Phone: +91 9123456789
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="vetModal3" tabindex="-1" aria-labelledby="vetModal3Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="vetModal3Label">Contact Dr. Priya Nair</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Email: priya.nair@pawfect.com<br>
+            Phone: +91 9345678901
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
