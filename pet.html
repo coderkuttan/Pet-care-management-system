@@ -1,7 +1,10 @@
 <html>
 <head>
     <title>Pawfect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -10,6 +13,9 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+        }
+        h1, h2, h3, h4, h5, h6, p, a, button, input, textarea {
+            font-family: 'Poppins', sans-serif !important;
         }
         a {
             text-decoration: none;
@@ -108,182 +114,218 @@
             transform: scale(1.1);
         }
         .container {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  padding: 10px;
-  box-sizing: border-box; 
-}
-section {
-  background: #fff;
-  border-radius: 7px;
-}
-.tools-board {
-  width: 200px;
-  padding: 15px 22px 0;
-  flex-shrink: 0; 
-}
+          display: flex;
+          width: 100%;
+          gap: 10px;
+          padding: 10px;
+          box-sizing: border-box; 
+        }
+        section {
+          background: #fff;
+          border-radius: 7px;
+        }
+        .tools-board {
+          width: 200px;
+          padding: 15px 22px 0;
+          flex-shrink: 0; 
+        }
 
-.tools-board .row {
-  margin-bottom: 20px;
-}
+        .tools-board .row {
+          margin-bottom: 20px;
+        }
 
-.row .options {
-  list-style: none;
-  margin: 10px 0 0 5px;
-}
+        .row .options {
+          list-style: none;
+          margin: 10px 0 0 5px;
+        }
 
-.row .options .option {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  margin-bottom: 10px;
-}
+        .row .options .option {
+          display: flex;
+          cursor: pointer;
+          align-items: center;
+          margin-bottom: 10px;
+        }
 
-.option:is(:hover, .active) img {
-  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
-}
+        .option:is(:hover, .active) img {
+          filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+        }
 
-.option :where(span, label) {
-  color: #5A6168;
-  cursor: pointer;
-  padding-left: 10px;
-}
+        .option :where(span, label) {
+          color: #5A6168;
+          cursor: pointer;
+          padding-left: 10px;
+        }
 
-.option:is(:hover, .active) :where(span, label) {
-  color: #a64942;
-}
+        .option:is(:hover, .active) :where(span, label) {
+          color: #a64942;
+        }
 
-.option #fill-color {
-  cursor: pointer;
-  height: 14px;
-  width: 14px;
-}
+        .option #fill-color {
+          cursor: pointer;
+          height: 14px;
+          width: 14px;
+        }
 
-#fill-color:checked ~ label {
-  color: #a64942;
-}
+        #fill-color:checked ~ label {
+          color: #a64942;
+        }
 
-.option #size-slider {
-  width: 100%;
-  height: 5px;
-  margin-top: 10px;
-}
-
-
-.colors .options {
-  display: flex;
-  justify-content: space-between;
-}
-
-.colors .option {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  margin-top: 3px;
-  position: relative;
-}
-
-.colors .option:nth-child(1) {
-  background-color: #fff;
-  border: 1px solid #bfbfbf;
-}
-
-.colors .option:nth-child(2) {
-  background-color: #000;
-}
-
-.colors .option:nth-child(3) {
-  background-color: #E02020;
-}
-
-.colors .option:nth-child(4) {
-  background-color: #6DD400;
-}
-
-.colors .option:nth-child(5) {
-  background-color: #4A98F7;
-}
-
-.colors .option.selected::before {
-  position: absolute;
-  content: "";
-  top: 50%;
-  left: 50%;
-  height: 12px;
-  width: 12px;
-  background: inherit;
-  border-radius: inherit;
-  border: 2px solid #fff;
-  transform: translate(-50%, -50%);
-}
+        .option #size-slider {
+          width: 100%;
+          height: 5px;
+          margin-top: 10px;
+        }
 
 
-.buttons button {
-  width: 100%;
-  color: #fff;
-  border: none;
-  outline: none;
-  padding: 11px 0;
-  font-size: 0.9rem;
-  margin-bottom: 13px;
-  background: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+        .colors .options {
+          display: flex;
+          justify-content: space-between;
+        }
 
-.buttons .clear-canvas {
-  color: #6C757D;
-  border: 1px solid #6C757D;
-  transition: all 0.3s ease;
-}
+        .colors .option {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          margin-top: 3px;
+          position: relative;
+        }
 
-.clear-canvas:hover {
-  color: #fff;
-  background: #6C757D;
-}
+        .colors .option:nth-child(1) {
+          background-color: #fff;
+          border: 1px solid #bfbfbf;
+        }
 
-.buttons .save-img {
-  background: #a64942;
-  border: 1px solid #a64942;
-}
+        .colors .option:nth-child(2) {
+          background-color: #000;
+        }
+
+        .colors .option:nth-child(3) {
+          background-color: #E02020;
+        }
+
+        .colors .option:nth-child(4) {
+          background-color: #6DD400;
+        }
+
+        .colors .option:nth-child(5) {
+          background-color: #4A98F7;
+        }
+
+        .colors .option.selected::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 50%;
+          height: 12px;
+          width: 12px;
+          background: inherit;
+          border-radius: inherit;
+          border: 2px solid #fff;
+          transform: translate(-50%, -50%);
+        }
 
 
-.drawing-board {
-  flex: 1; 
-  overflow: hidden;
-}
+        .buttons button {
+          width: 100%;
+          color: #fff;
+          border: none;
+          outline: none;
+          padding: 11px 0;
+          font-size: 0.9rem;
+          margin-bottom: 13px;
+          background: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
 
-.drawing-board canvas {
-  width: 100%;
-  height: 100%;
-}
+        .buttons .clear-canvas {
+          color: #6C757D;
+          border: 1px solid #6C757D;
+          transition: all 0.3s ease;
+        }
+
+        .clear-canvas:hover {
+          color: #fff;
+          background: #6C757D;
+        }
+
+        .buttons .save-img {
+          background: #a64942;
+          border: 1px solid #a64942;
+        }
 
 
-.info-board {
-  width: 250px; 
-  flex-shrink: 0; 
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 7px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        .drawing-board {
+          flex: 1; 
+          overflow: hidden;
+        }
 
-.info-board img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
+        .drawing-board canvas {
+          width: 100%;
+          height: 100%;
+        }
 
-.info-board p {
-  text-align: center;
-  color: #a64942;
-  font-size: 16px;
-}
- 
+
+        .info-board {
+          width: 250px; 
+          flex-shrink: 0; 
+          display: flex;
+          flex-direction: column;
+          background: #fff;
+          border-radius: 7px;
+          padding: 20px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-board img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+          margin-bottom: 15px;
+        }
+
+        .info-board p {
+          text-align: center;
+          color: #a64942;
+          font-size: 16px;
+        }
+        .carousel {
+          width: 80%;
+          margin: 0 auto;
+          max-height: 500px;
+          overflow: hidden;
+        }
+
+        .carousel-item img {
+          object-fit: cover;
+          height: 500px;
+          border-radius: 10px;
+        }
+
+        .carousel-caption {
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.5);
+          color: #fff;
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        .carousel-caption h3 {
+          font-size: 24px;
+          margin: 0;
+        }
+
+        .carousel-caption p {
+          font-size: 16px;
+          margin: 5px 0 0;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 5%;
+        }
     </style>
 </head>
 <body>
@@ -293,11 +335,11 @@ section {
             <span class="logo-text">Pawfect</span>
         </div>
         <nav>
-            <a href="product.html">Products</a>
-            <a href="about.html">About Us</a>
-            <a href="vet.html">Veterinary</a>
-            <a href="pawmedia.html">PawMedia</a>
-            <a href="furry.html">Furry Rent</a>
+          <a href="product.html"><i class="fas fa-paw"></i> Products</a>
+          <a href="about.html"><i class="fas fa-users"></i> About Us</a>
+          <a href="vet.html"><i class="fas fa-user-md"></i> Veterinary</a>
+          <a href="pawmedia.html"><i class="fas fa-play-circle"></i> PawMedia</a>
+          <a href="furry.html"><i class="fas fa-dog"></i> Furry Rent</a>
         </nav>
     </header>
     <main>
@@ -321,6 +363,39 @@ section {
                 <p>Exclusive pet care products designed for comfort and happiness in partnership with other brands.</p>
             </div>
         </div>
+        <h1 style="text-align: center;">Experiences</h2>
+<div id="experiencesCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="carousel-content">
+        <img src="H:\Semester 2\fsd\training-behavior.avif"class="d-block w-100" alt="Experience 1">
+        <div class="carousel-caption">
+          <h3>Dennis:</h3>
+          <p>"My son used to be alone,but soon after Jojo came into his life,it was a total turnover for him"</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-content">
+        <img src="H:\Semester 2\fsd\-84927-2048x1070-0.jpg" class="d-block w-100" alt="Experience 2">
+        <div class="carousel-caption">
+          <h3>Ruth:</h3>
+          <p>"My pet Dogo was suffering from rabies,but thankfully Pawfect's vet treated him and now he is joyful"</p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-content">
+        <img src="H:\Semester 2\fsd\synlawn-artificial-grass-at-dogmatico-dog-park-costa-rica-01.webp" class="d-block w-100" alt="Experience 3">
+        <div class="carousel-caption">
+          <h3>James:</h3>
+          <p>"My kid's birthday was a huge success,all credits to Pawfect's furry rent"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
         <h1>Draw your pet</h1>
         <div class="container">
             <section class="tools-board">
@@ -390,107 +465,108 @@ section {
     </main>
     <script>
         const canvas = document.querySelector("canvas"),
-toolBtns = document.querySelectorAll(".tool"),
-fillColor = document.querySelector("#fill-color"),
-sizeSlider = document.querySelector("#size-slider"),
-colorBtns = document.querySelectorAll(".colors .option"),
-colorPicker = document.querySelector("#color-picker"),
-clearCanvas = document.querySelector(".clear-canvas"),
-saveImg = document.querySelector(".save-img"),
-ctx = canvas.getContext("2d");
-let prevMouseX, prevMouseY, snapshot,
-isDrawing = false,
-selectedTool = "brush",
-brushWidth = 5,
-selectedColor = "#000";
-const setCanvasBackground = () => {
-    ctx.fillStyle = "#fff";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = selectedColor; 
-}
-window.addEventListener("load", () => {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    setCanvasBackground();
-});
-const drawRect = (e) => {
-    if(!fillColor.checked) {
-        return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-    }
-    ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-}
-const drawCircle = (e) => {
-    ctx.beginPath(); 
-    let radius = Math.sqrt(Math.pow((prevMouseX - e.offsetX), 2) + Math.pow((prevMouseY - e.offsetY), 2));
-    ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI); 
-    fillColor.checked ? ctx.fill() : ctx.stroke();
-}
-const drawTriangle = (e) => {
-    ctx.beginPath(); 
-    ctx.moveTo(prevMouseX, prevMouseY); 
-    ctx.lineTo(e.offsetX, e.offsetY); 
-    ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY); 
-    ctx.closePath(); 
-    fillColor.checked ? ctx.fill() : ctx.stroke(); 
-}
-const startDraw = (e) => {
-    isDrawing = true;
-    prevMouseX = e.offsetX; 
-    prevMouseY = e.offsetY; 
-    ctx.beginPath(); 
-    ctx.lineWidth = brushWidth; 
-    ctx.strokeStyle = selectedColor; 
-    ctx.fillStyle = selectedColor;
-    snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
-}
-const drawing = (e) => {
-    if(!isDrawing) return; 
-    ctx.putImageData(snapshot, 0, 0); 
-    if(selectedTool === "brush" || selectedTool === "eraser") { 
-        ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : selectedColor;
-        ctx.lineTo(e.offsetX, e.offsetY); 
-        ctx.stroke(); 
-    } else if(selectedTool === "rectangle"){
-        drawRect(e);
-    } else if(selectedTool === "circle"){
-        drawCircle(e);
-    } else {
-        drawTriangle(e);
-    }
-}
-toolBtns.forEach(btn => {
-    btn.addEventListener("click", () => { 
-        document.querySelector(".options .active").classList.remove("active");
-        btn.classList.add("active");
-        selectedTool = btn.id;
-    });
-});
-sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value); 
-colorBtns.forEach(btn => {
-    btn.addEventListener("click", () => { 
-        document.querySelector(".options .selected").classList.remove("selected");
-        btn.classList.add("selected");
-        selectedColor = window.getComputedStyle(btn).getPropertyValue("background-color");
-    });
-});
-colorPicker.addEventListener("change", () => {
-    colorPicker.parentElement.style.background = colorPicker.value;
-    colorPicker.parentElement.click();
-});
-clearCanvas.addEventListener("click", () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); 
-    setCanvasBackground();
-});
-saveImg.addEventListener("click", () => {
-    const link = document.createElement("a"); 
-    link.download = `${Date.now()}.jpg`; 
-    link.href = canvas.toDataURL(); 
-    link.click(); 
-});
-canvas.addEventListener("mousedown", startDraw);
-canvas.addEventListener("mousemove", drawing);
-canvas.addEventListener("mouseup", () => isDrawing = false);
+        toolBtns = document.querySelectorAll(".tool"),
+        fillColor = document.querySelector("#fill-color"),
+        sizeSlider = document.querySelector("#size-slider"),
+        colorBtns = document.querySelectorAll(".colors .option"),
+        colorPicker = document.querySelector("#color-picker"),
+        clearCanvas = document.querySelector(".clear-canvas"),
+        saveImg = document.querySelector(".save-img"),
+        ctx = canvas.getContext("2d");
+        let prevMouseX, prevMouseY, snapshot,
+        isDrawing = false,
+        selectedTool = "brush",
+        brushWidth = 5,
+        selectedColor = "#000";
+        const setCanvasBackground = () => {
+            ctx.fillStyle = "#fff";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = selectedColor; 
+        }
+        window.addEventListener("load", () => {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            setCanvasBackground();
+        });
+        const drawRect = (e) => {
+            if(!fillColor.checked) {
+                return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+            }
+            ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+        }
+        const drawCircle = (e) => {
+            ctx.beginPath(); 
+            let radius = Math.sqrt(Math.pow((prevMouseX - e.offsetX), 2) + Math.pow((prevMouseY - e.offsetY), 2));
+            ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI); 
+            fillColor.checked ? ctx.fill() : ctx.stroke();
+        }
+        const drawTriangle = (e) => {
+            ctx.beginPath(); 
+            ctx.moveTo(prevMouseX, prevMouseY); 
+            ctx.lineTo(e.offsetX, e.offsetY); 
+            ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY); 
+            ctx.closePath(); 
+            fillColor.checked ? ctx.fill() : ctx.stroke(); 
+        }
+        const startDraw = (e) => {
+            isDrawing = true;
+            prevMouseX = e.offsetX; 
+            prevMouseY = e.offsetY; 
+            ctx.beginPath(); 
+            ctx.lineWidth = brushWidth; 
+            ctx.strokeStyle = selectedColor; 
+            ctx.fillStyle = selectedColor;
+            snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        }
+        const drawing = (e) => {
+            if(!isDrawing) return; 
+            ctx.putImageData(snapshot, 0, 0); 
+            if(selectedTool === "brush" || selectedTool === "eraser") { 
+                ctx.strokeStyle = selectedTool === "eraser" ? "#fff" : selectedColor;
+                ctx.lineTo(e.offsetX, e.offsetY); 
+                ctx.stroke(); 
+            } else if(selectedTool === "rectangle"){
+                drawRect(e);
+            } else if(selectedTool === "circle"){
+                drawCircle(e);
+            } else {
+                drawTriangle(e);
+            }
+        }
+        toolBtns.forEach(btn => {
+            btn.addEventListener("click", () => { 
+                document.querySelector(".options .active").classList.remove("active");
+                btn.classList.add("active");
+                selectedTool = btn.id;
+            });
+        });
+        sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value); 
+        colorBtns.forEach(btn => {
+            btn.addEventListener("click", () => { 
+                document.querySelector(".options .selected").classList.remove("selected");
+                btn.classList.add("selected");
+                selectedColor = window.getComputedStyle(btn).getPropertyValue("background-color");
+            });
+        });
+        colorPicker.addEventListener("change", () => {
+            colorPicker.parentElement.style.background = colorPicker.value;
+            colorPicker.parentElement.click();
+        });
+        clearCanvas.addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            setCanvasBackground();
+        });
+        saveImg.addEventListener("click", () => {
+            const link = document.createElement("a"); 
+            link.download = `${Date.now()}.jpg`; 
+            link.href = canvas.toDataURL(); 
+            link.click(); 
+        });
+        canvas.addEventListener("mousedown", startDraw);
+        canvas.addEventListener("mousemove", drawing);
+      canvas.addEventListener("mouseup", () => isDrawing = false);
     </script>
+
     <footer>
         <p>Contact Us: info@pawfect.com | +91 9201213131</p>
         <a href="about.html">About Us</a>
@@ -506,5 +582,14 @@ canvas.addEventListener("mouseup", () => isDrawing = false);
             </a>
         </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var myCarousel = document.querySelector('#experiencesCarousel');
+        var carousel = new bootstrap.Carousel(myCarousel, {
+          interval: 2000, 
+          ride: 'carousel'
+        });
+      });
+    </script>
 </body>
 </html>
