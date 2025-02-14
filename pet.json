@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Buddy",
+    "species": "Dog",
+    "breed": "Labrador",
+    "age": 3,
+    "adoption_fee": 200.5,
+    "available_since": "2024-01-10T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Whiskers",
+    "species": "Cat",
+    "breed": "Siamese",
+    "age": 2,
+    "adoption_fee": 150,
+    "available_since": "2023-12-15T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "species": "Dog",
+    "breed": "Beagle",
+    "age": 4,
+    "adoption_fee": 180.75,
+    "available_since": "2024-02-05T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Milo",
+    "species": "Rabbit",
+    "breed": "Angora",
+    "age": 1,
+    "adoption_fee": 50.25,
+    "available_since": "2024-03-01T00:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Coco",
+    "species": "Parrot",
+    "breed": "Macaw",
+    "age": 5,
+    "adoption_fee": 300,
+    "available_since": "2024-02-20T00:00:00Z"
+  }
+]
