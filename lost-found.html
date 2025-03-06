@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found Pets</title>
+    <style>
+        /* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff1c2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, p, a, button, input, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    text-align: center;
+    color: #a64942;
+}
+h2 {
+    color: #a64942;
+}
+
+/* Header */
+header {
+    background-color: #a64942;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+}
+header .logo img {
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+}
+header .logo-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff9e6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+nav a:hover {
+    background-color: #fd5f55;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+}
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Pet Lists */
+.pet-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.pet-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    width: 280px;
+}
+.pet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.pet-card h3 {
+    color: #fd5f55;
+}
+.pet-card p {
+    margin: 5px 0;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+button {
+    background-color: #a64942;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #fd5f55;
+}
+
+/* Footer */
+footer {
+    background-color: #a64942;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pet-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pet-card {
+        width: 90%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="H:/Semester 2/fsd/main logo.png" alt="Pawfect Logo">
+            <span class="logo-text">Pawfect</span>
+        </div>
+    </header>
+
+    <section id="lostPets">
+        <h2>Lost Pets</h2>
+        <div class="pet-list" id="lostPetsList"></div>
+    </section>
+
+    <section id="foundPets">
+        <h2>Found Pets</h2>
+        <div class="pet-list" id="foundPetsList"></div>
+    </section>
+
+    <section id="reportPet">
+        <h2>Report a Lost Pet</h2>
+        <form id="petForm">
+            <input type="text" id="name" placeholder="Pet Name" required>
+            <input type="text" id="species" placeholder="Species (Dog, Cat, etc.)" required>
+            <input type="text" id="breed" placeholder="Breed" required>
+            <input type="text" id="color" placeholder="Color" required>
+            <input type="text" id="lastSeen" placeholder="Last Seen Location" required>
+            <input type="email" id="contact" placeholder="Your Contact Email" required>
+            <button type="submit">Submit</button>
+            <p id="errorMessage" style="color: red; display: none;"></p>
+        </form>
+    </section>
+
+    <script>
+        async function fetchPets() {
+            try {
+                const response = await fetch('/pets');
+                const data = await response.json();
+                
+                const lostPetsList = document.getElementById('lostPetsList');
+                const foundPetsList = document.getElementById('foundPetsList');
+
+                lostPetsList.innerHTML = "";
+                foundPetsList.innerHTML = "";
+
+                // Display Lost Pets
+                data.lostPets.forEach(pet => {
+                    let petDiv = document.createElement('div');
+                    petDiv.classList.add('pet-card');
+                    petDiv.innerHTML = `
+                        <h3>${pet.name} (${pet.species})</h3>
+                        <p><strong>Breed:</strong> ${pet.breed}</p>
+                        <p><strong>Color:</strong> ${pet.color}</p>
+                        <p><strong>Last Seen:</strong> ${pet.lastSeen}</p>
+                        <p><strong>Contact:</strong> ${pet.contact}</p>
+                    `;
+                    lostPetsList.appendChild(petDiv);
+                });
+
+                // Display Found Pets
+                data.foundPets.forEach(pet => {
+                    let petDiv = document.createElement('div');
+                    petDiv.classList.add('pet-card');
+                    petDiv.innerHTML = `
+                        <h3>${pet.name} (${pet.species})</h3>
+                        <p><strong>Breed:</strong> ${pet.breed}</p>
+                        <p><strong>Color:</strong> ${pet.color}</p>
+                        <p><strong>Found Location:</strong> ${pet.foundLocation}</p>
+                        <p><strong>Contact:</strong> ${pet.contact}</p>
+                    `;
+                    foundPetsList.appendChild(petDiv);
+                });
+
+            } catch (error) {
+                console.error("Error fetching pet data:", error);
+            }
+        }
+
+        document.getElementById('petForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const species = document.getElementById('species').value.trim();
+            const breed = document.getElementById('breed').value.trim();
+            const color = document.getElementById('color').value.trim();
+            const lastSeen = document.getElementById('lastSeen').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Simple Validation
+            if (!name || !species || !breed || !color || !lastSeen || !contact) {
+                errorMessage.textContent = "All fields are required!";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                errorMessage.textContent = "Pet name should only contain letters.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            if (!/^[a-zA-Z\s]+$/.test(species)) {
+                errorMessage.textContent = "Species should only contain letters.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            if (!/^[a-zA-Z\s]+$/.test(breed)) {
+                errorMessage.textContent = "Breed should only contain letters.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            if (!/^[a-zA-Z\s]+$/.test(color)) {
+                errorMessage.textContent = "Color should only contain letters.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            if (!/^\S+@\S+\.\S+$/.test(contact)) {
+                errorMessage.textContent = "Enter a valid email address.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            // Hide error message if everything is fine
+            errorMessage.style.display = "none";
+
+            const newPet = { name, species, breed, color, lastSeen, contact };
+
+            await fetch('/add-lost-pet', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newPet)
+            });
+
+            fetchPets();
+            document.getElementById('petForm').reset();
+        });
+
+        fetchPets();
+    </script>
+</body>
+</html>

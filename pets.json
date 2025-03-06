@@ -1,0 +1,55 @@
+{
+  "lostPets": [
+    {
+      "id": 1,
+      "name": "Buddy",
+      "species": "Dog",
+      "breed": "Golden Retriever",
+      "color": "Golden",
+      "lastSeen": "Central Park, NYC",
+      "contact": "john.doe@example.com",
+      "status": "Lost"
+    },
+    {
+      "id": 2,
+      "name": "Whiskers",
+      "species": "Cat",
+      "breed": "Siamese",
+      "color": "Cream and Brown",
+      "lastSeen": "5th Avenue, NYC",
+      "contact": "jane.smith@example.com",
+      "status": "Lost"
+    },
+    {
+      "name": "Alan James",
+      "species": "hh",
+      "breed": "dd",
+      "color": "d",
+      "lastSeen": "f",
+      "contact": "ddddd@cdd.com",
+      "id": 3
+    }
+  ],
+  "foundPets": [
+    {
+      "id": 1,
+      "name": "Luna",
+      "species": "Dog",
+      "breed": "Labrador",
+      "color": "Black",
+      "foundLocation": "Times Square, NYC",
+      "contact": "rescuer@example.com",
+      "status": "Found"
+    },
+    {
+      "id": 2,
+      "name": "Milo",
+      "species": "Cat",
+      "breed": "Persian",
+      "color": "White",
+      "foundLocation": "Brooklyn, NYC",
+      "contact": "cat.helper@example.com",
+      "status": "Found"
+    }
+  ]
+}
